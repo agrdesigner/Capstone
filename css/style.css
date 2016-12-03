@@ -1,0 +1,480 @@
+/*   Perfect Paddles Project
+
+Design Parameters:
+-----------------------------------------------------------------
+
+Colors:
+body font colour & header bkg:           #321730
+header & button font:                    #E4DCE7
+purple brand colour:                     #8A5689 (links and buttons)
+green brand colour:                      #96AE4B (link and button hover/focus state, headings & names)
+sections background:                     #E4DCE7
+
+
+Breakpoints:
+min-width: 600px
+min-width: 1140px
+
+Properties to use:
+border-radius, box-shadow, text-shadow
+
+**Be deployed on the web as a GitHub Pages site
+
+######
+
+# FONTS
+# FONTAWESOME
+# GENERAL
+  ## TYPOGRAPHY
+  ## LINKS & BUTTONS
+# HEADER
+# SECTIONS
+  ## HOME
+  ## SCHEDULE
+  ## VENUE
+  ## CONTACT
+# FOOTER
+# CLEARFIX
+
+---------------------------------------------*/
+
+
+/* # FONTS  ---------------------------------------------*/
+
+@font-face {
+    font-family: 'bungee';
+    src: url('../fonts/bungee/bungeehairline-regular-webfont.eot');
+    src: url('../fonts/bungee/bungeehairline-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/bungee/bungeehairline-regular-webfont.woff') format('woff'),
+         url('../fonts/bungee/bungeehairline-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'unicaone';
+    src: url('../fonts/unicaone/unicaone-regular-webfont.eot');
+    src: url('../fonts/unicaone/unicaone-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/unicaone/unicaone-regular-webfont.woff') format('woff'),
+         url('../fonts/unicaone/unicaone-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: url('raleway-extralight-webfont.eot');
+    src: url('raleway-extralight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('raleway-extralight-webfont.woff') format('woff'),
+         url('raleway-extralight-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'raleway-italic';
+    src: url('raleway-extralightitalic-webfont.eot');
+    src: url('raleway-extralightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('raleway-extralightitalic-webfont.woff') format('woff'),
+         url('raleway-extralightitalic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* # FONTAWESOME  ---------------------------------------------*/
+
+.social-media li a:before {
+    display: inline-block;
+    vertical-align: top;
+    font-family: 'Fontawesome';
+    font-size: 1rem;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    content: '\f0c0';
+    transition: color 0.3s ease 0s;
+    width: 0.88571429em;
+    text-align: center;
+}
+
+.social-media li a:hover:before {
+  color: #b64036;
+}
+
+
+li a[href*="facebook.com"]::before { content: '\f09a'; }
+
+li a[href*="twitter.com"]::before { content: '\f099'; }
+
+li a[href*="instagram.com"]::before { content: '\f16d'; }
+
+li a[href*="pinterest.com"]::before { content: '\f0d2'; }
+
+li a[href*="plus.google.com"]::before { content: '\f0d5'; }
+
+
+
+/* # GENERAL  ---------------------------------------------*/
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-content {
+  height: 100%;
+  width: 100%;
+  background:
+      linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(3,3,3,0.3) 55%, rgba(0,0,0,0.3) 100%),  /* on top */
+      url(../images/microphone.jpg);     /* in the middle */
+  background-size: cover;
+  background-position: center top;
+  margin: 0;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+div {
+  text-align: center;
+  margin: 0 auto;
+}
+
+div:focus {
+  outline: 0;
+}
+
+/* ## TYPOGRAPHY  ---------------------------------------------*/
+
+p {
+  font-family: "raleway";
+  font-size: 0.8rem;
+  color: #321730;
+  line-height: 1.1rem;
+  /*margin: 2rem 0;*/
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-family: "bungee";
+  font-size: 3rem;
+  color: #96AE4B;
+  margin: 0;
+  text-align: center;
+}
+
+h3 {
+  font-family: "unicaone";
+  font-size: 0.75rem;
+  margin-bottom: 0.9;
+  margin-top: 0;
+  color: #321730;
+  letter-spacing: 5px;
+}
+
+h4 {
+  font-family: "unicaone";
+  font-size: 1.1rem;
+  margin-bottom: 0.9;
+  margin-top: 0;
+  color: #321730;
+  letter-spacing: 5px;
+}
+
+h5 {
+  font-family: "unicaone";
+  font-size: 1.1rem;
+  margin-bottom: 0.9;
+  margin-top: 0;
+  color: #321730;
+  letter-spacing: 2px;
+}
+
+h6 {
+  font-family: "bungee";
+  font-size: 1rem;
+  margin: 0.9rem;
+  color: #321730;
+  letter-spacing: 1px;
+}
+
+.site-title h3 {
+  color: #E4DCE7;
+}
+
+.site-title span {
+  font-size: 0.8rem;
+  font-family: "bungee";
+  color: #96AE4B;
+}
+
+
+@media all and (min-width: 600px) {
+
+}
+
+@media all and (min-width: 1140px) {
+
+}
+
+
+/* ## LINKS & BUTTONS  ---------------------------------------------*/
+
+a {
+	color: #96AE4B;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #96AE4B;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: #8A5689;
+}
+
+a:focus {
+	outline: 0;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+button {
+	background-color: #8A5689;
+  color: #E4DCE7;
+  border: none;
+  border-radius: 4px;
+  font-family: "unicaone";
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  padding: 0.5rem;
+}
+
+button a {
+  color: #E4DCE7;
+}
+
+button:visited {
+  background-color: #8A5689;
+}
+
+button:hover,
+button:focus,
+button:active {
+	color: #E4DCE7;
+}
+
+button:focus {
+	outline: 0;
+}
+
+button:hover,
+button:active {
+	outline: 0;
+}
+
+button a:hover,
+button a:focus,
+button a:active {
+	color: #E4DCE7;
+}
+
+/* # HEADER  ---------------------------------------------*/
+
+header {
+  margin: 0;
+}
+
+.site-header {
+  background-color: #321730;
+}
+
+.site-title {
+  padding: 1rem;
+}
+
+.site-title span {
+  margin-bottom: 20px;
+}
+
+.fa-bars {
+  color: #E4DCE7;
+  padding: 0.8rem;
+  cursor: pointer;
+  position: absolute;
+  font-size: 1rem;
+  top: 0.8rem;
+  left: 0.8rem;
+}
+
+.navigation {
+   top: 0;
+   right: 0;
+   bottom: 0;
+   width: 100px;
+   height: inherit;
+   background-color: #E4DCE7;
+   position: fixed;
+   z-index: 1;
+   padding: 1rem 0.8rem;
+}
+
+.navigation a {
+  color: #321730;
+  letter-spacing: 3px;
+  font-family: "unicaone";
+  font-size: 0.9rem;
+  padding: 0.6rem;
+}
+
+.navigation li {
+  margin-bottom: 0.5rem;
+}
+/* # SECTIONS  ---------------------------------------------*/
+
+
+.site-main {
+  max-width: 650px;
+}
+
+.home, .schedule, .venue, .contact {
+  width: 600px;
+  margin: 0.5rem 2rem;
+}
+
+.home .inner, .schedule .inner, .venue .inner, .contact .inner {
+  width: 550px;
+  padding: 2rem;
+  border-radius: 4px;
+  background-color: rgba(228, 220, 231, 0.7);
+}
+
+.home .inner, .venue .inner {
+  width: 400px;
+}
+
+
+/* ## HOME  ---------------------------------------------*/
+
+.event {
+  margin: 1.2rem 0;
+}
+
+.tickets {
+  width: 300px;
+  height: 125px;
+  border: 2px solid #321730;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 3rem auto 0 auto;
+}
+
+.price {
+  height: 100px;
+  border-right: 2px solid #321730;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 0.7rem;
+}
+
+.price h5 {
+  margin: 0.3rem;
+}
+
+.buy {
+  height: 100px;
+  padding: 0 1rem;
+  text-align: left;
+}
+
+.buy p {
+  font-size: 0.7rem;
+}
+
+
+/* ## SCHEDULE  ---------------------------------------------*/
+
+.schedule {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.singers-gallery {
+  width: 32%;
+  display: inline-block;
+}
+
+.singer h5 {
+  height: 50px;
+  width: 130px;
+  background-position: center top;
+  margin: 0.5rem;
+  padding: 6.5rem 1.5rem 1rem 1.5rem;
+  color: #E4DCE7;
+  font-size: 1.6rem;
+  letter-spacing: 3.5px;
+}
+
+h5.s1 {
+  background:
+      url(../images/jsinger_1.png);
+  background-size: cover;
+}
+
+h5.s2 {
+  background:
+      url(../images/jsinger_2.png);
+  background-size: cover;
+}
+
+h5.s3 {
+  background:
+      url(../images/jsinger_3.png);
+  background-size: cover;
+}
+
+h5.s4 {
+  background:
+      url(../images/jsinger_4.png);
+  background-size: cover;
+}
+
+h5.s5 {
+  background:
+      url(../images/jsinger_5.png);
+  background-size: cover;
+}
+/* ## VENUE  ---------------------------------------------*/
+
+.address {
+  background-color: #321730;
+  padding: 1rem;
+  border-radius: 4px;
+}
+.address p, .address h5 {
+  color: #E4DCE7;
+  margin: 1rem 0;
+}
+.venue img {
+  width: 250px;
+  height: auto;
+  margin: 1rem auto;
+}
+/* ## CONTACT  ---------------------------------------------*/
