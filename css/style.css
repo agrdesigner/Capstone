@@ -65,34 +65,29 @@ border-radius, box-shadow, text-shadow
 
 @font-face {
     font-family: 'raleway';
-    src: url('raleway-extralight-webfont.eot');
-    src: url('raleway-extralight-webfont.eot?#iefix') format('embedded-opentype'),
-         url('raleway-extralight-webfont.woff') format('woff'),
-         url('raleway-extralight-webfont.ttf') format('truetype');
+    src: url('../fonts/raleway/raleway-extralight-webfont.eot');
+    src: url('../fonts/raleway/raleway-extralight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/raleway/raleway-extralight-webfont.woff') format('woff'),
+         url('../fonts/raleway/raleway-extralight-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 
 }
 
-@font-face {
-    font-family: 'raleway-italic';
-    src: url('raleway-extralightitalic-webfont.eot');
-    src: url('raleway-extralightitalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('raleway-extralightitalic-webfont.woff') format('woff'),
-         url('raleway-extralightitalic-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-
-}
 
 /* # FONTAWESOME  ---------------------------------------------*/
+
+.social-media {
+  margin-top: 0.6rem;
+}
 
 .social-media li a:before {
     display: inline-block;
     vertical-align: top;
     font-family: 'Fontawesome';
-    font-size: 1rem;
-    color: #fff;
+    font-size: 1.4rem;
+    padding: 0.5rem;
+    color: #321730;
     -webkit-font-smoothing: antialiased;
     content: '\f0c0';
     transition: color 0.3s ease 0s;
@@ -101,7 +96,12 @@ border-radius, box-shadow, text-shadow
 }
 
 .social-media li a:hover:before {
-  color: #b64036;
+  color: #8A5689
+}
+
+.social-media li {
+    list-style: none;
+    display: inline;
 }
 
 
@@ -111,11 +111,6 @@ li a[href*="twitter.com"]::before { content: '\f099'; }
 
 li a[href*="instagram.com"]::before { content: '\f16d'; }
 
-li a[href*="pinterest.com"]::before { content: '\f0d2'; }
-
-li a[href*="plus.google.com"]::before { content: '\f0d5'; }
-
-
 
 /* # GENERAL  ---------------------------------------------*/
 
@@ -124,7 +119,7 @@ body {
   margin: 0;
 }
 
-nav ul {
+ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -148,9 +143,10 @@ div {
   margin: 0 auto;
 }
 
-div:focus {
+div:focus, input:focus {
   outline: 0;
 }
+
 
 /* ## TYPOGRAPHY  ---------------------------------------------*/
 
@@ -261,6 +257,7 @@ button {
   font-size: 0.9rem;
   letter-spacing: 2px;
   padding: 0.5rem;
+  width: 100px;
 }
 
 button a {
@@ -337,7 +334,7 @@ header {
   letter-spacing: 3px;
   font-family: "unicaone";
   font-size: 0.9rem;
-  padding: 0.6rem;
+  padding: 0.5rem;
 }
 
 .navigation li {
@@ -352,7 +349,10 @@ header {
 
 .home, .schedule, .venue, .contact {
   width: 600px;
-  margin: 0.5rem 2rem;
+  margin: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .home .inner, .schedule .inner, .venue .inner, .contact .inner {
@@ -362,7 +362,7 @@ header {
   background-color: rgba(228, 220, 231, 0.7);
 }
 
-.home .inner, .venue .inner {
+.home .inner, .venue .inner, .contact .inner {
   width: 400px;
 }
 
@@ -422,42 +422,47 @@ header {
 }
 
 .singer h5 {
-  height: 50px;
-  width: 130px;
+  height: 45px;
+  width: 115px;
   background-position: center top;
   margin: 0.5rem;
-  padding: 6.5rem 1.5rem 1rem 1.5rem;
+  padding: 5.5rem 1rem 0.5rem 1rem;
   color: #E4DCE7;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   letter-spacing: 3.5px;
 }
 
 h5.s1 {
   background:
+      linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(3,3,3,0.3) 55%, rgba(0,0,0,0.3) 100%),  /* on top */
       url(../images/jsinger_1.png);
   background-size: cover;
 }
 
 h5.s2 {
   background:
+      linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(3,3,3,0.3) 55%, rgba(0,0,0,0.3) 100%),  /* on top */
       url(../images/jsinger_2.png);
   background-size: cover;
 }
 
 h5.s3 {
   background:
+      linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(3,3,3,0.3) 55%, rgba(0,0,0,0.3) 100%),  /* on top */
       url(../images/jsinger_3.png);
   background-size: cover;
 }
 
 h5.s4 {
   background:
+      linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(3,3,3,0.3) 55%, rgba(0,0,0,0.3) 100%),  /* on top */
       url(../images/jsinger_4.png);
   background-size: cover;
 }
 
 h5.s5 {
   background:
+      linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(3,3,3,0.3) 55%, rgba(0,0,0,0.3) 100%),  /* on top */
       url(../images/jsinger_5.png);
   background-size: cover;
 }
@@ -478,3 +483,55 @@ h5.s5 {
   margin: 1rem auto;
 }
 /* ## CONTACT  ---------------------------------------------*/
+
+form input {
+  border: 2px solid #321730;
+  background-color: #321730;
+  color: #E4DCE7;
+  font-family: "raleway";
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  padding: 0.2rem;
+  margin: 0.8rem 0;
+  width: 175px;
+  text-align: left;
+}
+form label {
+  color: #321730;
+  font-family: "unicaone";
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+}
+
+form input::-webkit-input-placeholder {
+   color: #E4DCE7;
+}
+
+form input:-moz-placeholder { /* Firefox 18- */
+   color: #E4DCE7;
+}
+
+form input::-moz-placeholder {  /* Firefox 19+ */
+   color: #E4DCE7;
+}
+
+form input:-ms-input-placeholder {
+   color: #E4DCE7;
+}
+
+form input[name=message] {
+
+}
+
+form input[type=submit] {
+  background-color: #8A5689;
+  color: #E4DCE7;
+  border: none;
+  border-radius: 4px;
+  font-family: "unicaone";
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  padding: 0.5rem;
+  text-align: center;
+  width: 100px;
+}
