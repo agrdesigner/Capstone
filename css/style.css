@@ -134,7 +134,7 @@ ul {
   background-size: cover;
   background-position: center top;
   margin: 0;
-  padding: 2rem;
+  padding: 2rem 0.5rem;
   box-sizing: border-box;
 }
 
@@ -155,7 +155,6 @@ p {
   font-size: 0.8rem;
   color: #321730;
   line-height: 1.1rem;
-  /*margin: 2rem 0;*/
   letter-spacing: 1px;
 }
 
@@ -178,8 +177,8 @@ h3 {
 
 h4 {
   font-family: "unicaone";
-  font-size: 1.1rem;
-  margin-bottom: 0.9;
+  font-size: 1rem;
+  margin-bottom: 0.8;
   margin-top: 0;
   color: #321730;
   letter-spacing: 5px;
@@ -214,12 +213,16 @@ h6 {
 
 
 @media all and (min-width: 600px) {
-
+  p {
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+  h4 {
+    font-size: 1.2rem;
+  }
 }
 
-@media all and (min-width: 1140px) {
 
-}
 
 
 /* ## LINKS & BUTTONS  ---------------------------------------------*/
@@ -322,7 +325,7 @@ header {
    right: 0;
    bottom: 0;
    width: 100px;
-   height: inherit;
+   height: 6.1rem;
    background-color: #E4DCE7;
    position: fixed;
    z-index: 1;
@@ -340,47 +343,54 @@ header {
 .navigation li {
   margin-bottom: 0.5rem;
 }
+
+@media all and (min-width: 600px) {
+  .navigation {
+     height: inherit;;
+  }
+}
 /* # SECTIONS  ---------------------------------------------*/
 
 
 .site-main {
-  max-width: 650px;
+  min-width: 300px;
+  width: 80%;
+  max-width: 500px;
 }
 
 .home, .schedule, .venue, .contact {
-  width: 600px;
+  width: 285px;
   margin: 0 2rem;
+  padding: 1rem;
+  border-radius: 4px;
+  background-color: rgba(228, 220, 231, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.home .inner, .schedule .inner, .venue .inner, .contact .inner {
-  width: 550px;
-  padding: 2rem;
-  border-radius: 4px;
-  background-color: rgba(228, 220, 231, 0.7);
-}
-
-.home .inner, .venue .inner, .contact .inner {
-  width: 400px;
+@media all and (min-width: 600px) {
+  .home, .schedule, .venue, .contact {
+    width: 450px;
+  }
 }
 
 
 /* ## HOME  ---------------------------------------------*/
 
 .event {
-  margin: 1.2rem 0;
+  margin: 1.2rem auto;
+  width: 265px;
 }
 
 .tickets {
-  width: 300px;
   height: 125px;
+  width: 235px;
   border: 2px solid #321730;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 3rem auto 0 auto;
+  margin: 2rem auto;
 }
 
 .price {
@@ -404,6 +414,13 @@ header {
 
 .buy p {
   font-size: 0.7rem;
+  margin-top: 3px;
+}
+
+@media all and (min-width: 600px) {
+  .event {
+    width: 80%;
+  }
 }
 
 
@@ -412,23 +429,33 @@ header {
 .schedule {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
 }
 
 .singers-gallery {
-  width: 32%;
+  width: 47%;
   display: inline-block;
+  margin: 0;
+}
+
+.singers-gallery h4 {
+  background-color: #321730;
+  color: #E4DCE7;
+  padding: 0.2rem 0.6rem;
+  text-align: left;
+  font-size: 0.7rem;
+  margin: 0.5rem;
 }
 
 .singer h5 {
-  height: 45px;
-  width: 115px;
+  height: 25px;
+  width: 97px;
   background-position: center top;
-  margin: 0.5rem;
-  padding: 5.5rem 1rem 0.5rem 1rem;
+  margin: 0.6rem;
+  padding: 4.5rem 0.5rem 1rem 0.5rem;
   color: #E4DCE7;
-  font-size: 1.3rem;
+  font-size: 1rem;
   letter-spacing: 3.5px;
 }
 
@@ -465,6 +492,14 @@ h5.s5 {
       linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(3,3,3,0.3) 55%, rgba(0,0,0,0.3) 100%),  /* on top */
       url(../images/jsinger_5.png);
   background-size: cover;
+}
+
+h5.s {
+  color: #321730;
+  height: auto;
+  width: auto;
+  margin: 0.5rem;
+  padding: 0;
 }
 /* ## VENUE  ---------------------------------------------*/
 
