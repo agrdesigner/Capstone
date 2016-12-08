@@ -24,7 +24,7 @@
 
       <nav class="navigation">
         <ul>
-          <li><a href="#home">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="#schedule">Schedule</a></li>
           <li><a href="#venue">Venue</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -89,7 +89,7 @@
       </div>
       <div id="contact" class="contact">
           <div class="form">
-            <form class="" action="index.html" method="post">
+            <form class="" action="index.html" method="post" id="contact">
               <label for="name">Name</label>
               <br />
               <input type="text" name="name" placeholder="Full name" required />
@@ -100,9 +100,9 @@
               <br />
               <label for="message">Message</label>
               <br />
-              <input type="text" name="message" placeholder="Enter message" required />
+              <textarea name="message" form="contact" placeholder="Enter message" required></textarea>
               <br />
-              <input type="submit" name="submit" value="Submit" />
+              <input class="submit" type="submit" name="submit" value="Submit" />
             </form>
           </div>
           <div class="social-media">

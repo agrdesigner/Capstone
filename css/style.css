@@ -143,7 +143,7 @@ div {
   margin: 0 auto;
 }
 
-div:focus, input:focus {
+div:focus, input:focus, textarea:focus {
   outline: 0;
 }
 
@@ -261,10 +261,12 @@ button {
   letter-spacing: 2px;
   padding: 0.5rem;
   width: 100px;
+  transition: color 0.3s ease 0s;
 }
 
 button a {
   color: #E4DCE7;
+  transition: color 0.3s ease 0s;
 }
 
 button:visited {
@@ -274,7 +276,7 @@ button:visited {
 button:hover,
 button:focus,
 button:active {
-	color: #E4DCE7;
+	color: #321730;
 }
 
 button:focus {
@@ -286,10 +288,14 @@ button:active {
 	outline: 0;
 }
 
+button a:visited {
+	color: #E4DCE7;
+}
+
 button a:hover,
 button a:focus,
 button a:active {
-	color: #E4DCE7;
+	color: #321730;
 }
 
 /* # HEADER  ---------------------------------------------*/
@@ -353,15 +359,15 @@ header {
 
 
 .site-main {
-  min-width: 300px;
-  width: 80%;
-  max-width: 500px;
+  width: 76%;
+  min-width: 335px;
+  max-width: 515px;
 }
 
 .home, .schedule, .venue, .contact {
   width: 285px;
   margin: 0 2rem;
-  padding: 1rem;
+  padding: 0.8rem 1.2rem;
   border-radius: 4px;
   background-color: rgba(228, 220, 231, 0.7);
   display: flex;
@@ -371,7 +377,7 @@ header {
 
 @media all and (min-width: 600px) {
   .home, .schedule, .venue, .contact {
-    width: 450px;
+    width: 440px;
   }
 }
 
@@ -421,6 +427,21 @@ header {
   .event {
     width: 80%;
   }
+  .tickets {
+    height: 150px;
+    width: 260px;
+  }
+  .price {
+    height: 125px;
+  }
+  .buy {
+    height: 115px;
+    padding: 0 1.3rem;
+  }
+  .buy p {
+    font-size: 0.8rem;
+    margin-top: 3px;
+  }
 }
 
 
@@ -429,49 +450,36 @@ header {
 .schedule {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
 }
 
 .singers-gallery {
-  width: 47%;
+  width: 45%;
+  margin: 0.3rem;
   display: inline-block;
-  margin: 0;
+  vertical-align:top;
 }
 
 .singers-gallery h4 {
   background-color: #321730;
   color: #E4DCE7;
-  padding: 0.2rem 0.6rem;
+  padding: 0.25rem 0.6rem;
   text-align: left;
   font-size: 0.7rem;
-  margin: 0.5rem;
+  margin: 0.35rem;
 }
 
 .singer h5 {
   height: 25px;
   width: 97px;
   background-position: center top;
-  margin: 0.6rem;
+  margin: 0.7rem auto;
   padding: 4.5rem 0.5rem 1rem 0.5rem;
   color: #E4DCE7;
   font-size: 1rem;
   letter-spacing: 3.5px;
 }
 
-h5.s1 {
-  background:
-      linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(3,3,3,0.3) 55%, rgba(0,0,0,0.3) 100%),  /* on top */
-      url(../images/jsinger_1.png);
-  background-size: cover;
-}
 
-h5.s2 {
-  background:
-      linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(3,3,3,0.3) 55%, rgba(0,0,0,0.3) 100%),  /* on top */
-      url(../images/jsinger_2.png);
-  background-size: cover;
-}
 
 h5.s3 {
   background:
@@ -501,7 +509,25 @@ h5.s {
   margin: 0.5rem;
   padding: 0;
 }
+
+@media all and (min-width: 600px) {
+  .schedule {
+    padding-bottom: 0.15rem;
+  }
+  .singers-gallery h4 {
+    margin: 0.1rem;
+  }
+  .singer h5 {
+    margin: 1rem auto;
+  }
+}
+
+
 /* ## VENUE  ---------------------------------------------*/
+
+.venue {
+  padding-bottom: 1.25rem;
+}
 
 .address {
   background-color: #321730;
@@ -519,7 +545,11 @@ h5.s {
 }
 /* ## CONTACT  ---------------------------------------------*/
 
-form input {
+.contact {
+  padding: 1.25rem;
+}
+
+form input, form textarea {
   border: 2px solid #321730;
   background-color: #321730;
   color: #E4DCE7;
@@ -531,6 +561,11 @@ form input {
   width: 175px;
   text-align: left;
 }
+
+form textarea {
+  height: 50px;
+}
+
 form label {
   color: #321730;
   font-family: "unicaone";
@@ -538,25 +573,22 @@ form label {
   letter-spacing: 3px;
 }
 
-form input::-webkit-input-placeholder {
+form input::-webkit-input-placeholder, form textarea::-webkit-input-placeholder {
    color: #E4DCE7;
 }
 
-form input:-moz-placeholder { /* Firefox 18- */
+form input:-moz-placeholder, form textarea:-moz-placeholder { /* Firefox 18- */
    color: #E4DCE7;
 }
 
-form input::-moz-placeholder {  /* Firefox 19+ */
+form input::-moz-placeholder, form textarea::-moz-placeholder {  /* Firefox 19+ */
    color: #E4DCE7;
 }
 
-form input:-ms-input-placeholder {
+form input:-ms-input-placeholder, form textarea:-ms-input-placeholder {
    color: #E4DCE7;
 }
 
-form input[name=message] {
-
-}
 
 form input[type=submit] {
   background-color: #8A5689;
@@ -569,4 +601,11 @@ form input[type=submit] {
   padding: 0.5rem;
   text-align: center;
   width: 100px;
+  transition: color 0.3s ease 0s;
+}
+
+input[type=submit]:hover,
+input[type=submit]:focus {
+	cursor: pointer;
+  color: #321730;
 }

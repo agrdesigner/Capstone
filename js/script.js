@@ -15,9 +15,15 @@ $(function() {
     sidebar.trigger('sidebar:toggle');
   });
 
-  // Animations
+  // Form Response
 
-  // Form Validation
+  var form = $('div.form');
+  var $submit = $('.submit');
+
+  $submit.on('click', function(event){
+    event.preventDefault();
+    form.innerHTML("<h4>Hello World!</h4>");
+  });
 
 
 });
