@@ -21,9 +21,18 @@ $(function() {
   var $submit = $('.submit');
 
   $submit.on('click', function(event){
+    // prevents from refreshing the page
     event.preventDefault();
-    form.innerHTML("<h4>Hello World!</h4>");
+    
+
+    if ($('.response').length === 0) {
+      form.append("<h4 class='response'>We'll get back to you shortly!</h4>");
+    }
+
   });
+
+
+
 
 
 });
